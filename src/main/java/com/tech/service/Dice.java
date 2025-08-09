@@ -1,4 +1,4 @@
-package service;
+package com.tech.service;
 
 import java.util.Random;
 

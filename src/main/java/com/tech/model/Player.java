@@ -1,4 +1,4 @@
-package service;
+package com.tech.model;
 
 public class Player {
 }

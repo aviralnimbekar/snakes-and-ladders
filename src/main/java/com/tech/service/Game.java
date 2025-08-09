@@ -1,6 +1,7 @@
-package service;
+package com.tech.service;
 
-import model.Board;
+import com.tech.model.Board;
+import com.tech.model.Player;
 
 public class Game {
 
