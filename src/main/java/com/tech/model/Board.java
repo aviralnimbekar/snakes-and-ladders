@@ -17,6 +17,7 @@ public class Board {
         int playerPositionOnBoard = updatePositionForSnakeOrLadderIfAny(player);
 
         if (playerPositionOnBoard > BOARD_SIZE) {
+            System.out.println(player.getName() + " exceeds the board boundary. Resetting position to previous cell...");
             player.updatePosition(playerOnCell);
         } else {
             playerOnCell = playerPositionOnBoard;
