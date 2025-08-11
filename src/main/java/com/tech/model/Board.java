@@ -6,7 +6,7 @@ public class Board {
     private static final int BOARD_SIZE = 100;
     private final Map<Integer, Integer> ladders;
     private final Map<Integer, Integer> snakes;
-    private int currentPosition;
+    private int playerOnCell;
 
     public Board() {
         this.ladders = defineLadders();
@@ -17,12 +17,12 @@ public class Board {
         int playerPositionOnBoard = updatePositionForSnakeOrLadderIfAny(player);
 
         if (playerPositionOnBoard > BOARD_SIZE) {
-            player.updatePosition(currentPosition);
+            player.updatePosition(playerOnCell);
         } else {
-            currentPosition = playerPositionOnBoard;
+            playerOnCell = playerPositionOnBoard;
         }
 
-        System.out.println("Player's position on the board :: " + currentPosition + "\n");
+        System.out.println("Player's position on the board :: " + playerOnCell + "\n");
         if (player.getPosition() == BOARD_SIZE) {
             System.out.println("Congratulations " + player.getName() + " you have won the game!!!");
         }
@@ -47,8 +47,8 @@ public class Board {
         return newPositionOnBoard;
     }
 
-    public boolean isGameContinue() {
-        return currentPosition < BOARD_SIZE;
+    public boolean hasReachedFinalCell() {
+        return playerOnCell < BOARD_SIZE;
     }
 
     private Map<Integer, Integer> defineSnakes() {

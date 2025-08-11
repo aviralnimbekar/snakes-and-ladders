@@ -35,7 +35,7 @@ public class GameTest {
         when(dice.roll()).thenReturn(4);
 
         Board board = mock(Board.class);
-        when(board.isGameContinue())
+        when(board.hasReachedFinalCell())
                 .thenReturn(true) // 1st call
                 .thenReturn(false); // 2nd call
 
@@ -71,7 +71,7 @@ public class GameTest {
         when(dice.roll()).thenReturn(4);
 
         Board board = mock(Board.class);
-        when(board.isGameContinue())
+        when(board.hasReachedFinalCell())
                 .thenReturn(true) // 1st call
                 .thenReturn(false); // 2nd call
 
@@ -111,7 +111,7 @@ public class GameTest {
         when(dice.roll()).thenReturn(4);
 
         Board board = mock(Board.class);
-        when(board.isGameContinue())
+        when(board.hasReachedFinalCell())
                 .thenReturn(true) // 1st call
                 .thenReturn(false); // 2nd call
 

@@ -1,6 +1,5 @@
 package com.tech.model;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -83,7 +82,7 @@ class BoardTest {
 
         Board board = new Board();
         boardCurrentPosition.set(board, boardPosition); // Simulating a position equal to the board size
-        boolean isGameContinue = board.isGameContinue();
+        boolean isGameContinue = board.hasReachedFinalCell();
 
         assertTrue(isGameContinue);
     }
@@ -96,7 +95,7 @@ class BoardTest {
 
         Board board = new Board();
         boardCurrentPosition.set(board, boardPosition); // Simulating a position equal to the board size
-        boolean isGameContinue = board.isGameContinue();
+        boolean isGameContinue = board.hasReachedFinalCell();
 
         assertFalse(isGameContinue);
     }

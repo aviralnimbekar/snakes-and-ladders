@@ -18,7 +18,7 @@ public class Game {
     public void start() {
         System.out.println(player.getName() + " starting the game at position 00 \n");
 
-        while (board.isGameContinue()) {
+        while (board.hasReachedFinalCell()) {
             //Simulating user input with dice roll
             // as this is single player game
             int diceOutcome = dice.roll();
