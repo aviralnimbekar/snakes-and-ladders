@@ -12,6 +12,18 @@ public class Game {
     public Game() {
         this.dice = new Dice();
         this.board = new Board();
-        this.player = new Player();
+        this.player = new Player("player 1");
+    }
+
+    public void start() {
+        System.out.println(player.getName() + " starting the game at position 00 \n");
+
+        while (board.isGameContinue()) {
+            int diceOutcome = dice.roll();
+
+            player.move(diceOutcome);
+
+            board.updateBoard(player);
+        }
     }
 }
