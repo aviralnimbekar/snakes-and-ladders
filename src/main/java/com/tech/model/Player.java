@@ -15,6 +15,10 @@ public class Player {
         System.out.println(name + " moves to :: " + position);
     }
 
+    public void updatePosition(Integer playerPosition) {
+        position = playerPosition;
+    }
+
     public String getName() {
         return name;
     }

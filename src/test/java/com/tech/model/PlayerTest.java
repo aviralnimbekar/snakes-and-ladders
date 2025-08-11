@@ -41,4 +41,16 @@ class PlayerTest {
         int expectedPosition = 6;
         assertEquals(expectedPosition, player.getPosition());
     }
+
+    @Test
+    void shouldUpdatePlayerPosition() {
+        Player player = new Player("test player");
+        player.move(7);
+
+        int updatedPosition = 33;
+        player.updatePosition(updatedPosition);
+
+        int expectedPosition = 33;
+        assertEquals(expectedPosition, player.getPosition());
+    }
 }
