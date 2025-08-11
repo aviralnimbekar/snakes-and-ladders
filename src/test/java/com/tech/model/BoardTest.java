@@ -16,7 +16,7 @@ class BoardTest {
     @ParameterizedTest
     @CsvSource(value = {"7, 33", "37, 85", "51, 72", "63, 99"}, delimiter = ',')
     void shouldUpdateBoardWithPlayerPositionWhenLandsOnLadder(int foot, int top) throws NoSuchFieldException, IllegalAccessException {
-        Field boardCurrentPosition = Board.class.getDeclaredField("currentPosition");
+        Field boardCurrentPosition = Board.class.getDeclaredField("playerOnCell");
         boardCurrentPosition.setAccessible(true);
 
         Player mockedPlayer = Mockito.mock(Player.class);
@@ -31,7 +31,7 @@ class BoardTest {
     @ParameterizedTest
     @CsvSource(value = {"36, 19", "65, 35", "87, 32", "97, 21"}, delimiter = ',')
     void shouldUpdateBoardWithPlayerPositionWhenLandsOnSnake(int head, int tail) throws NoSuchFieldException, IllegalAccessException {
-        Field boardCurrentPosition = Board.class.getDeclaredField("currentPosition");
+        Field boardCurrentPosition = Board.class.getDeclaredField("playerOnCell");
         boardCurrentPosition.setAccessible(true);
 
         Player mockedPlayer = Mockito.mock(Player.class);
@@ -45,7 +45,7 @@ class BoardTest {
 
     @Test
     void shouldUpdateBoardWithPlayerPositionWhenExceedingBoardBoundary() throws NoSuchFieldException, IllegalAccessException {
-        Field boardCurrentPosition = Board.class.getDeclaredField("currentPosition");
+        Field boardCurrentPosition = Board.class.getDeclaredField("playerOnCell");
         boardCurrentPosition.setAccessible(true);
 
         Player mockedPlayer = Mockito.mock(Player.class);
@@ -61,7 +61,7 @@ class BoardTest {
 
     @Test
     void shouldUpdateBoardWithPlayerPosition() throws NoSuchFieldException, IllegalAccessException {
-        Field boardCurrentPosition = Board.class.getDeclaredField("currentPosition");
+        Field boardCurrentPosition = Board.class.getDeclaredField("playerOnCell");
         boardCurrentPosition.setAccessible(true);
 
         Player mockedPlayer = Mockito.mock(Player.class);
@@ -77,7 +77,7 @@ class BoardTest {
     @ParameterizedTest
     @ValueSource(ints = {99, 69, 23})
     void shouldReturnTrueWhenGameContinues(int boardPosition) throws NoSuchFieldException, IllegalAccessException {
-        Field boardCurrentPosition = Board.class.getDeclaredField("currentPosition");
+        Field boardCurrentPosition = Board.class.getDeclaredField("playerOnCell");
         boardCurrentPosition.setAccessible(true);
 
         Board board = new Board();
@@ -90,7 +90,7 @@ class BoardTest {
     @ParameterizedTest
     @ValueSource(ints = {100, 101, 159})
     void shouldReturnFalseWhenGameCompleted(int boardPosition) throws NoSuchFieldException, IllegalAccessException {
-        Field boardCurrentPosition = Board.class.getDeclaredField("currentPosition");
+        Field boardCurrentPosition = Board.class.getDeclaredField("playerOnCell");
         boardCurrentPosition.setAccessible(true);
 
         Board board = new Board();
